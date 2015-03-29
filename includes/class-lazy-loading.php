@@ -6,11 +6,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://github.com/bdeleasa/lazy-loading-images
+ * @link       https://github.com/bdeleasa/lazy-loading
  * @since      1.0.0
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  * @author     Brianna Deleasa <me@briannadeleasa.com>
  */
-class Lazy_Loading_Images {
+class Lazy_Loading {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Lazy_Loading_Images {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Lazy_Loading_Images_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Lazy_Loading_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -68,7 +68,7 @@ class Lazy_Loading_Images {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'lazy-loading-images';
+		$this->plugin_name = 'lazy-loading';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -83,10 +83,10 @@ class Lazy_Loading_Images {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Lazy_Loading_Images_Loader. Orchestrates the hooks of the plugin.
-	 * - Lazy_Loading_Images_i18n. Defines internationalization functionality.
-	 * - Lazy_Loading_Images_Admin. Defines all hooks for the admin area.
-	 * - Lazy_Loading_Images_Public. Defines all hooks for the public side of the site.
+	 * - Lazy_Loading_Loader. Orchestrates the hooks of the plugin.
+	 * - Lazy_Loading_i18n. Defines internationalization functionality.
+	 * - Lazy_Loading_Admin. Defines all hooks for the admin area.
+	 * - Lazy_Loading_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -100,33 +100,33 @@ class Lazy_Loading_Images {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lazy-loading-images-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lazy-loading-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lazy-loading-images-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lazy-loading-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-lazy-loading-images-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-lazy-loading-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-lazy-loading-images-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-lazy-loading-public.php';
 
-		$this->loader = new Lazy_Loading_Images_Loader();
+		$this->loader = new Lazy_Loading_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Lazy_Loading_Images_i18n class in order to set the domain and to register the hook
+	 * Uses the Lazy_Loading_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -134,7 +134,7 @@ class Lazy_Loading_Images {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Lazy_Loading_Images_i18n();
+		$plugin_i18n = new Lazy_Loading_i18n();
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
@@ -150,7 +150,7 @@ class Lazy_Loading_Images {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Lazy_Loading_Images_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Lazy_Loading_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		// Nothing needed on the admin side at the moment.
 
@@ -165,7 +165,7 @@ class Lazy_Loading_Images {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Lazy_Loading_Images_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Lazy_Loading_Public( $this->get_plugin_name(), $this->get_version() );
 
 		// Make sure these are only called on the front end
 		if ( ! is_admin() ) {
@@ -199,7 +199,7 @@ class Lazy_Loading_Images {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Lazy_Loading_Images_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Lazy_Loading_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

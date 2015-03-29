@@ -3,11 +3,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://github.com/bdeleasa/lazy-loading-images
+ * @link       https://github.com/bdeleasa/lazy-loading
  * @since      1.0.0
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/public
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/public
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/public
  * @author     Brianna Deleasa <me@briannadeleasa.com>
  */
-class Lazy_Loading_Images_Public {
+class Lazy_Loading_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -63,7 +63,7 @@ class Lazy_Loading_Images_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( 'jquery.lazyload' , plugin_dir_url( __FILE__ ) . 'js/jquery.lazyload.min.js', array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( 'lazy-loading-images' , plugin_dir_url( __FILE__ ) . 'js/scripts.min.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'lazy-loading' , plugin_dir_url( __FILE__ ) . 'js/scripts.min.js', array( 'jquery' ), $this->version, true );
 
 	}
 
@@ -76,10 +76,10 @@ class Lazy_Loading_Images_Public {
 	 */
 	public static function enable_lazy_loading() {
 
-		add_filter( 'the_content', 'Lazy_Loading_Images_Public::enable_lazyloading_the_content' );
-		add_filter( 'post_thumbnail_html', 'Lazy_Loading_Images_Public::enable_lazyloading_post_thumbnail_html', 10, 999 );
-		add_filter( 'wp_get_attachment_image_attributes',  'Lazy_Loading_Images_Public::alter_attachment_image_attributes', 99 );
-		add_filter( 'widget_text',  'Lazy_Loading_Images_Public::alter_widget_text' );
+		add_filter( 'the_content', 'Lazy_Loading_Public::enable_lazyloading_the_content' );
+		add_filter( 'post_thumbnail_html', 'Lazy_Loading_Public::enable_lazyloading_post_thumbnail_html', 10, 999 );
+		add_filter( 'wp_get_attachment_image_attributes',  'Lazy_Loading_Public::alter_attachment_image_attributes', 99 );
+		add_filter( 'widget_text',  'Lazy_Loading_Public::alter_widget_text' );
 
 	}
 
@@ -92,10 +92,10 @@ class Lazy_Loading_Images_Public {
 	 */
 	public static function disable_lazy_loading() {
 
-		remove_filter( 'the_content', 'Lazy_Loading_Images_Public::enable_lazyloading_the_content' );
-		remove_filter( 'post_thumbnail_html',  'Lazy_Loading_Images_Public::enable_lazyloading_post_thumbnail_html', 10, 999 );
-		remove_filter( 'wp_get_attachment_image_attributes',   'Lazy_Loading_Images_Public::alter_attachment_image_attributes', 99 );
-		remove_filter( 'widget_text', 'Lazy_Loading_Images_Public::alter_widget_text' );
+		remove_filter( 'the_content', 'Lazy_Loading_Public::enable_lazyloading_the_content' );
+		remove_filter( 'post_thumbnail_html',  'Lazy_Loading_Public::enable_lazyloading_post_thumbnail_html', 10, 999 );
+		remove_filter( 'wp_get_attachment_image_attributes',   'Lazy_Loading_Public::alter_attachment_image_attributes', 99 );
+		remove_filter( 'widget_text', 'Lazy_Loading_Public::alter_widget_text' );
 
 	}
 

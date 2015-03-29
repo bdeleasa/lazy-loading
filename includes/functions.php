@@ -3,11 +3,11 @@
 /**
  * Custom functions that are used throughout this plugin
  *
- * @link       https://github.com/bdeleasa/lazy-loading-images
+ * @link       https://github.com/bdeleasa/lazy-loading
  * @since      1.0.0
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/public
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/public
  */
 
 
@@ -105,12 +105,12 @@ function lazy_loading_images_modify_array_attributes( $attr ) {
  * Enable Lazy Loading
  */
 function lazy_loading_images_enable() {
-	Lazy_Loading_Images_Public::enable_lazy_loading();
+	Lazy_Loading_Public::enable_lazy_loading();
 }
 
 /**
  * Enable Lazy Loading
  */
 function lazy_loading_images_disable() {
-	Lazy_Loading_Images_Public::disable_lazy_loading();
+	Lazy_Loading_Public::disable_lazy_loading();
 }

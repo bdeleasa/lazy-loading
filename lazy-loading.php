@@ -2,20 +2,20 @@
 
 /**
  *
- * @link              https://github.com/bdeleasa/lazy-loading-images
+ * @link              https://github.com/bdeleasa/lazy-loading
  * @since             1.0.0
- * @package           Lazy_Loading_Images
+ * @package           Lazy_Loading
  *
  * @wordpress-plugin
  * Plugin Name:       Lazy Loading Images
- * Plugin URI:        https://github.com/bdeleasa/lazy-loading-images
+ * Plugin URI:        https://github.com/bdeleasa/lazy-loading
  * Description:       Enables lazy loading for images using a jQuery script.
  * Version:           1.0.0
  * Author:            Brianna Deleasa
  * Author URI:        http://briannadeleasa.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       lazy-loading-images
+ * Text Domain:       lazy-loading
  * Domain Path:       /languages
  */
 
@@ -30,20 +30,20 @@ define( 'LLI_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-lazy-loading-images-activator.php
+ * This action is documented in includes/class-lazy-loading-activator.php
  */
 function activate_lazy_loading_images() {
-	require_once LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-images-activator.php';
-	Lazy_Loading_Images_Activator::activate();
+	require_once LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-activator.php';
+	Lazy_Loading_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-lazy-loading-images-deactivator.php
+ * This action is documented in includes/class-lazy-loading-deactivator.php
  */
 function deactivate_lazy_loading_images() {
-	require_once LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-images-deactivator.php';
-	Lazy_Loading_Images_Deactivator::deactivate();
+	require_once LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-deactivator.php';
+	Lazy_Loading_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_lazy_loading_images' );
@@ -58,7 +58,7 @@ require LLI_PLUGIN_DIR_PATH . 'includes/functions.php';
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-images.php';
+require LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading.php';
 
 /**
  * Begins execution of the plugin.
@@ -71,7 +71,7 @@ require LLI_PLUGIN_DIR_PATH . 'includes/class-lazy-loading-images.php';
  */
 function run_lazy_loading_images() {
 
-	$plugin = new Lazy_Loading_Images();
+	$plugin = new Lazy_Loading();
 	$plugin->run();
 
 }

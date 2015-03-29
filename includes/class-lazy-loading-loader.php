@@ -3,11 +3,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://github.com/bdeleasa/lazy-loading-images
+ * @link       https://github.com/bdeleasa/lazy-loading
  * @since      1.0.0
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  * @author     Brianna Deleasa <me@briannadeleasa.com>
  */
-class Lazy_Loading_Images_Loader {
+class Lazy_Loading_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

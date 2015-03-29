@@ -6,11 +6,11 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://github.com/bdeleasa/lazy-loading-images
+ * @link       https://github.com/bdeleasa/lazy-loading
  * @since      1.0.0
  *
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Lazy_Loading_Images
- * @subpackage Lazy_Loading_Images/includes
+ * @package    Lazy_Loading
+ * @subpackage Lazy_Loading/includes
  * @author     Brianna Deleasa <me@briannadeleasa.com>
  */
-class Lazy_Loading_Images_i18n {
+class Lazy_Loading_i18n {
 
 	/**
 	 * The domain specified for this plugin.

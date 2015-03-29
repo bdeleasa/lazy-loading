@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Lazy Loading ===
 Contributors: bdeleasa
 Tags: images, lazy loading, lazy load
 Requires at least: 3.5
@@ -24,7 +24,7 @@ This plugin automatically adds the necessary HTML attributes and classes to imag
 
 This plugin can be installed the same as every other Wordpress plugin:
 
-1. Upload the `lazy-loading-images` folder to the `/wp-content/plugins/` directory.
+1. Upload the `lazy-loading` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. That's it! :)
 
