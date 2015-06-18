@@ -2,17 +2,18 @@
 
 (function($) {
 
+    var threshold = lazy_loading_options.threshold;
+
     // Enable lazy loading for image tags
-    // @todo add a settings page for these params
     $('img.lazy').lazyload({
-        threshold : 200,
+        threshold : threshold,
         effect : 'fadeIn'
     });
 
     // Enables lazy loading on Ajax Requests
     $(document).ajaxStop(function(){
         $('img.lazy').lazyload({
-            threshold : 200,
+            threshold : threshold,
             effect: 'fadeIn'
         }).removeClass('lazy');
     });
