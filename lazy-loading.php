@@ -10,7 +10,7 @@
  * Plugin Name:       Lazy Loading Images
  * Plugin URI:        https://github.com/bdeleasa/lazy-loading
  * Description:       Enables lazy loading for images using a jQuery script.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Brianna Deleasa
  * Author URI:        http://briannadeleasa.com
  * License:           GPL-2.0+
